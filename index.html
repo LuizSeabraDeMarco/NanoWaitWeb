@@ -8,212 +8,146 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
   <style>
-    /* Por padrão, botão escondido */
-#showMoreBtn {
-  display: none;
-}
-
-/* Somente em mobile, mostra o botão */
+#showMoreBtn { display: none; }
 @media screen and (max-width: 768px) {
-  #showMoreBtn {
-    display: block;
-    margin: 16px auto 0;
-  }
+  #showMoreBtn { display: block; margin: 16px auto 0; }
 }
 
-    :root {
-      --bg: #0b0d10;
-      --card: #11141a;
-      --border: #1f2430;
-      --text: #e6e9ef;
-      --muted: #9aa4b2;
-      --accent: #7c9cff;
-      --accent-2: #4ade80;
-    }
+:root {
+  --bg: #0b0d10;
+  --card: #11141a;
+  --border: #1f2430;
+  --text: #e6e9ef;
+  --muted: #9aa4b2;
+  --accent: #7c9cff;
+}
 
-    * { box-sizing: border-box; }
+* { box-sizing: border-box; }
 
-    body {
-      margin: 0;
-      font-family: 'Inter', system-ui, sans-serif;
-      background: radial-gradient(1200px 600px at 20% -10%, #12172a, transparent), var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: radial-gradient(1200px 600px at 20% -10%, #12172a, transparent), var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
 
-    header {
-      padding: 80px 24px 60px;
-      text-align: center;
-    }
+header {
+  padding: 80px 24px 60px;
+  text-align: center;
+}
 
-    header h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 16px;
-      letter-spacing: -1px;
-    }
+header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
 
-    header p {
-      max-width: 760px;
-      margin: 0 auto 32px;
-      color: var(--muted);
-      font-size: 1.1rem;
-    }
+header p {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  color: var(--muted);
+}
 
-    .stats {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
 
-    .stat {
-      background: linear-gradient(180deg, #131827, #0e111a);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 20px 28px;
-      min-width: 180px;
-    }
+.stat {
+  background: linear-gradient(180deg, #131827, #0e111a);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px 28px;
+  min-width: 180px;
+}
 
-    .stat span {
-      display: block;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
+.stat span {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
 
-    .stat strong {
-      font-size: 1.8rem;
-      font-weight: 800;
-    }
+.stat strong {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
 
-    section {
-      padding: 64px 24px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+section {
+  padding: 64px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 16px;
-      letter-spacing: -0.5px;
-    }
+h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
 
-    .card {
-      background: linear-gradient(180deg, #121626, #0e111a);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 24px;
-      transition: transform .2s ease, border-color .2s ease;
-    }
+.card {
+  background: linear-gradient(180deg, #121626, #0e111a);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+  transition: transform .2s ease, border-color .2s ease;
+}
 
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent);
-    }
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
 
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 8px;
-      font-size: 1.2rem;
-    }
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
 
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
 
-    .badge {
-      display: inline-block;
-      margin-bottom: 12px;
-      padding: 4px 10px;
-      font-size: 0.75rem;
-      border-radius: 999px;
-      background: rgba(124,156,255,0.15);
-      color: var(--accent);
-      border: 1px solid rgba(124,156,255,0.35);
-    }
+.badge {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  background: rgba(124,156,255,0.15);
+  color: var(--accent);
+  border: 1px solid rgba(124,156,255,0.35);
+}
 
-    .tutorial-btn {
-      margin-top: 16px;
-      padding: 10px 14px;
-      border-radius: 10px;
-      border: 1px solid var(--accent);
-      background: transparent;
-      color: var(--accent);
-      cursor: pointer;
-      font-size: 0.85rem;
-    }
+.tutorial-btn {
+  margin-top: 16px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
 
-    .tutorial-btn:hover {
-      background: rgba(124,156,255,0.1);
-    }
+footer {
+  padding: 48px 24px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+}
 
-    footer {
-      padding: 48px 24px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    /* ===== Tutorial Overlay ===== */
-    .tutorial-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(11,13,16,0.85);
-      backdrop-filter: blur(6px);
-      display: none;
-      z-index: 999;
-    }
-
-    .tutorial-panel {
-      max-width: 720px;
-      margin: 60px auto;
-      background: linear-gradient(180deg, #121626, #0e111a);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 32px;
-    }
-
-    .tutorial-panel h2 {
-      margin-top: 0;
-    }
-
-    .tutorial-panel pre {
-      background: #11141a;
-      border-radius: 12px;
-      padding: 14px;
-      overflow-x: auto;
-      color: var(--accent);
-    }
-
-    .close-btn {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #11141a;
-      border: 1px solid var(--border);
-      color: var(--text);
-      border-radius: 999px;
-      padding: 10px 14px;
-      cursor: pointer;
-    }
-
-    /* ===== MOBILE: Esconde cards extras ===== */
-    @media screen and (max-width: 768px) {
-      .card.extra {
-        display: none;
-      }
-    }
+@media screen and (max-width: 768px) {
+  .card.extra { display: none; }
+}
   </style>
 </head>
 
@@ -222,65 +156,49 @@
 <header>
   <h1>Nano-Wait Ecosystem</h1>
   <p>
-    Um ecossistema open-source focado em <strong>execução adaptativa</strong>, automação confiável
-    e visão computacional. Construído sobre o núcleo do <strong>Nano-Wait</strong>.
+    Um ecossistema open-source focado em <strong>execução adaptativa</strong>,
+    automação confiável e visão computacional.
   </p>
 
   <div class="stats">
     <div class="stat">
       <span>Downloads totais</span>
-      <strong id="downloads">+6K</strong>
+      <strong>+7K</strong>
     </div>
     <div class="stat">
       <span>Países</span>
-      <strong id="countries">58</strong>
+      <strong>58</strong>
     </div>
     <div class="stat">
       <span>Extensões oficiais</span>
-      <strong>1</strong>
+      <strong>2</strong>
     </div>
   </div>
 </header>
 
 <section>
-  <h2>O que é o Nano-Wait?</h2>
-  <p style="max-width: 800px; color: var(--muted)">
-    O <strong>Nano-Wait</strong> é uma biblioteca Python que redefine como sistemas esperam por eventos.
-    Em vez de timeouts fixos e frágeis, ele utiliza <strong>espera adaptativa</strong>, observação contínua
-    e execução orientada por estado.
-  </p>
-</section>
-
-<section>
   <h2>Extensões Oficiais</h2>
   <div class="grid">
 
-    <!-- nano-wait -->
     <div class="card">
       <span class="badge">CORE ⭐</span>
       <h3>nano-wait</h3>
-      <p>
-        Biblioteca central (biblioteca-mãe). Motor de execução adaptativa,
-        controle de tempo, logging inteligente e observação de estados.
-      </p>
-
-      <button class="tutorial-btn" onclick="openTutorial()">
-        Documentação
-      </button>
+      <p>Biblioteca central. Motor de execução adaptativa.</p>
+      <button class="tutorial-btn" onclick="window.open('https://pypi.org/project/nano-wait/', '_blank')">Documentação</button>
     </div>
 
-    <!-- nano-wait-vision -->
     <div class="card">
       <span class="badge">OFICIAL</span>
       <h3>nano-wait-vision</h3>
-      <p>
-        Extensão de visão computacional com OCR, captura de tela e modos
-        observe / decision / learn para automação baseada em imagem.
-      </p>
+      <p>Extensão de visão computacional com OCR e captura de tela.</p>
+      <button class="tutorial-btn" onclick="window.open('https://pypi.org/project/nano-wait-vision/', '_blank')">Documentação</button>
+    </div>
 
-      <button class="tutorial-btn" onclick="openTutorial2()">
-        Documentação
-      </button>
+    <div class="card">
+      <span class="badge">OFICIAL</span>
+      <h3>selenium-nanowait</h3>
+      <p>Integração adaptativa com Selenium para eliminar waits frágeis em testes web.</p>
+      <button class="tutorial-btn" onclick="window.open('https://pypi.org/project/selenium-nanowait/', '_blank')">Documentação</button>
     </div>
 
   </div>
@@ -289,88 +207,29 @@
 <section>
   <h2>Ideias de Projetos (Comunidade)</h2>
   <div class="grid" id="projectGrid">
-    <div class="card"><h3>nano-wait-selenium</h3><p>Integração adaptativa com Selenium para eliminar waits frágeis em testes web.</p></div>
     <div class="card"><h3>nano-wait-playwright</h3><p>Execução inteligente de ações web com Playwright.</p></div>
     <div class="card"><h3>Desktop Vision RPA</h3><p>Automação de sistemas legados usando visão computacional.</p></div>
-    <div class="card extra"><h3>Adaptive Web Scraper</h3><p>Scraper resiliente que espera mudanças reais na página.</p></div>
-    <div class="card extra"><h3>LLM Decision Engine</h3><p>Uso de LLMs para decidir próximos passos durante a espera.</p></div>
-    <div class="card extra"><h3>Test Flakiness Analyzer</h3><p>Ferramenta para detectar e corrigir testes instáveis.</p></div>
-    <div class="card extra"><h3>Game Bot Vision</h3><p>Bot de jogos baseado em estados visuais.</p></div>
-    <div class="card extra"><h3>CI Smart Wait</h3><p>Extensão para pipelines CI/CD mais rápidos e confiáveis.</p></div>
-    <div class="card extra"><h3>Accessibility Automation</h3><p>Automação assistiva baseada em visão e eventos.</p></div>
-    <div class="card extra"><h3>Adaptive Benchmark Tool</h3><p>Comparação entre waits fixos e adaptativos.</p></div>
+    <div class="card"><h3>Adaptive Web Scraper</h3><p>Scraper resiliente que espera mudanças reais na página.</p></div>
+    <div class="card"><h3>LLM Decision Engine</h3><p>Uso de LLMs para decidir próximos passos durante a espera.</p></div>
+    <div class="card"><h3>Test Flakiness Analyzer</h3><p>Ferramenta para detectar e corrigir testes instáveis.</p></div>
+    <div class="card"><h3>Game Bot Vision</h3><p>Bot de jogos baseado em estados visuais.</p></div>
+    <div class="card"><h3>CI Smart Wait</h3><p>Extensão para pipelines CI/CD mais rápidos e confiáveis.</p></div>
+    <div class="card"><h3>Accessibility Automation</h3><p>Automação assistiva baseada em visão e eventos.</p></div>
+    <div class="card"><h3>Adaptive Benchmark Tool</h3><p>Comparação entre waits fixos e adaptativos.</p></div>
   </div>
 
   <button id="showMoreBtn" class="tutorial-btn" onclick="showMoreProjects()">Ver mais</button>
-</section>
-
-<section>
-  <h2>Como participar</h2>
-  <p style="max-width: 800px; color: var(--muted)">
-    Qualquer pessoa pode criar um projeto usando o Nano-Wait. Projetos que atingirem
-    <strong>1.000+ downloads</strong> entram automaticamente como recomendados
-    na documentação oficial.
-  </p>
 </section>
 
 <footer>
   <p>Nano-Wait Ecosystem · Open Source · Global</p>
 </footer>
 
-<!-- ===== Tutorial Overlay ===== -->
-<div class="tutorial-overlay" id="tutorial">
-  <button class="close-btn" onclick="closeTutorial()">✕ Fechar</button>
-
-  <div class="tutorial-panel">
-    <h2>⭐ Nano-Wait — Tutorial Básico</h2>
-
-    <p>
-      O <strong>Nano-Wait</strong> substitui <code>sleep()</code> por uma espera inteligente.
-      Ele só continua quando algo realmente acontece.
-    </p>
-
-    <h3>1. Instalação</h3>
-    <pre>pip install nano-wait</pre>
-
-    <h3>2. Exemplo simples</h3>
-    <pre>
-from nano_wait import wait
-
-wait(lambda: arquivo_existe("dados.txt"))
-    </pre>
-
-    <p>
-      O código pausa até a condição ser verdadeira.
-    </p>
-
-    <h3>📘 Documentação oficial</h3>
-    <p>
-      <a href="https://pypi.org/project/nano-wait/" target="_blank">
-        https://pypi.org/project/nano-wait/
-      </a>
-    </p>
-  </div>
-</div>
-
 <script>
-  function openTutorial() {
-    window.open("https://pypi.org/project/nano-wait/", '_blank');
-  }
-
-  function openTutorial2() {
-    window.open("https://pypi.org/project/nano-wait-vision", '_blank');
-  }
-
-  function closeTutorial() {
-    document.getElementById("tutorial").style.display = "none";
-  }
-
-  // ===== Ver Mais Mobile =====
-  function showMoreProjects() {
-    const extras = document.querySelectorAll('.card.extra');
-    extras.forEach(card => card.style.display = 'block');
-    document.getElementById('showMoreBtn').style.display = 'none';
-  }
+function showMoreProjects() {
+  document.querySelectorAll('.card').forEach(c => c.style.display = 'block');
+  document.getElementById('showMoreBtn').style.display = 'none';
+}
 </script>
 
 </body>
